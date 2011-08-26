@@ -349,7 +349,7 @@ int Named_TAG_number(Named_TAG *n) {
 void convert_file(const char *filename) {
     char *outfile = malloc(strlen(filename) + 5);
     strcpy(outfile, filename);
-    char *dot = strchr(outfile, '.');
+    char *dot = strstr(outfile, ".gunzipped");
     if (!dot)
 	dot = outfile + strlen(outfile);
     strcpy(dot, ".bo2");
