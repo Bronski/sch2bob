@@ -2,7 +2,7 @@ This tool converts .schematic files (NBT) to .bo2. NBT files are gzipped, but th
 
 Sample use:
 
-for i in *.schematic; do gunzip < "$i" > `echo "$i" | sed s/.schematic$/.gunzipped/`; done
+for i in *.schematic; do gunzip < "$i" > "`echo \"$i\" | sed s/.schematic$/.gunzipped/`"; done
 ./sch2bob *.gunzipped
 rm *.gunzipped
 
