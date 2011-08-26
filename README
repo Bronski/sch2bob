@@ -1,0 +1,11 @@
+This tool converts .schematic files (NBT) to .bo2. NBT files are gzipped, but this tool won't do that for you.
+
+Sample use:
+
+for i in *.schematic; do gunzip < "$i" > `echo "$i" | sed s/.schematic$/.gunzipped/`; done
+./sch2bob *.gunzipped
+rm *.gunzipped
+
+sch2bob removes the extension, so you should now have a directory full of .bo2 files.
+
+Inspired fully by github.com/mispy's sch2bob.rb; I just made it faster.
